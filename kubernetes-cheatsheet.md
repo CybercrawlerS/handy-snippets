@@ -8,5 +8,5 @@ kubectl get pods -o custom-columns='Pod:.metadata.name,Container:.spec.container
 
 **Forcefully delete all un-healthy pods**
 ```sh
-kubectl get pods -A --field-selector status.phase!="Running" | awk '{if ($4 != "Running") system ("kubectl -n " $1 " delete pods " $2 " --grace-period=0 " " --force ")}'
+kubectl get pods -A --field-selector status.phase!="Running" | awk '{if ($4 != "Running") system ("kubectl -n " $1 " delete pods " $2 " --force --grace-period=0 ")}'
 ```
