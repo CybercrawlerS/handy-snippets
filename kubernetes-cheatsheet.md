@@ -3,7 +3,7 @@ Cheatsheet with simple scripts that comes handy when required (Be it during set-
 
 **Extract list of pods along with the container name and image**
 ```sh
-kubectl get pods -o custom-columns='podName:.metadata.name,Container:.spec.containers.*.name,Image:.spec.containers.*.image'
+kubectl get pods -o custom-columns='Pod:.metadata.name,Container:.spec.containers.*.name,Image:.spec.containers.*.image'
 ```
 
 **Forcefully delete all un-healthy pods**
